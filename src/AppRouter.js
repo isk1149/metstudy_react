@@ -18,6 +18,7 @@ export default function AppRouter() {
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/" element={<App/>}/>
                     <Route path="/signup" element={<SignUp/>}/>
+                    
                 </Routes>
             </div>
             <Box mt={5}>

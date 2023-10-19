@@ -9,9 +9,10 @@ export default function SignUp() {
         event.preventDefault();
         //오브젝트에서 form에 저장된 데이터를 앱의 형태로 바꿔줌.
         const data = new FormData(event.target);
-        const username = data.get("username")
+        const username = data.get("username");
+        const email = data.get("email");
         const password = data.get("password");
-        signup({username: username, password: password}).then(
+        signup({userName: username, email:email, password: password}).then(
             (response) => {
                 //계정 생성 성공 시 login페이지로 리디렉트
                 window.location.href="/login";
@@ -39,6 +40,17 @@ export default function SignUp() {
                         id="username"
                         label="사용자이름"
                         autoFocus
+                    />
+                </Grid>
+                <Grid item xs={12}>
+                    <TextField
+                        variant="outlined"
+                        required
+                        fullWidth
+                        name="email"
+                        label="email"
+                        id="email"
+                        autoComplete="current-password"
                     />
                 </Grid>
                 <Grid item xs={12}>
